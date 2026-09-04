@@ -4,9 +4,167 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Maus Office</title>
+<link rel="stylesheet" href="office.css" />
 </head>
 <body>
-<p>See repository files. Full UI is published in the next commit if this placeholder is replaced.</p>
-<script>location.replace('./README.md')</script>
+<header>
+  <div class="brand"><i class="dot"></i> MAUS <b>OFFICE</b></div>
+  <span class="chip on" id="healthChip">OFFICE · DEMO</span>
+  <span class="chip" id="uptimeChip">UP 00:00</span>
+  <span class="chip">HQ FLOOR</span>
+  <div class="grow"></div>
+  <div class="mode">
+    <button data-lang="tr" class="active">TR</button>
+    <button data-lang="en">EN</button>
+    <button class="active" data-mode="demo" data-i="demo">Demo</button>
+    <button data-mode="live" data-i="live">Live / Canlı</button>
+  </div>
+</header>
+<main>
+  <div class="floor-wrap">
+    <div class="floor" id="floor">
+      <svg class="route" viewBox="0 0 1000 620" preserveAspectRatio="none">
+        <path id="wire" d="M180 140 C 320 140, 420 280, 500 290 S 700 140, 820 160" fill="none" stroke="#7dffc355" stroke-width="2" stroke-dasharray="6 8">
+          <animate attributeName="stroke-dashoffset" from="0" to="-80" dur="2s" repeatCount="indefinite" />
+        </path>
+      </svg>
+      <div class="desk" data-seat="kenan" style="left:40px;top:28px;--scan:#7dffc3">
+        <div class="top">R&D <span>KENAN</span></div>
+        <i class="plant"></i><i class="lamp"></i><i class="papers"></i><i class="mug"></i><i class="kbd"></i>
+        <div class="screen" data-line="src scan.."></div>
+        <div class="desk-actions">
+          <input data-seat-input="kenan" data-i-ph="phMsg" placeholder="Message / Mesaj" />
+          <button class="allow" data-seat-send="kenan" data-i="send">Send</button>
+          <button class="deny" data-seat-stop="kenan" data-i="stop">Stop</button>
+        </div>
+        <div class="status-pill" style="right:8px;bottom:8px" id="st-kenan">idle</div>
+      </div>
+      <div class="desk" data-seat="mira" style="left:40px;top:196px;--scan:#7ecbff">
+        <div class="top">ENG <span>MIRA</span></div>
+        <i class="plant"></i><i class="lamp"></i><i class="papers"></i><i class="mug"></i><i class="kbd"></i>
+        <div class="screen" data-line="git diff"></div>
+        <div class="desk-actions">
+          <input data-seat-input="mira" data-i-ph="phMsg" placeholder="Message / Mesaj" />
+          <button class="allow" data-seat-send="mira" data-i="send">Send</button>
+          <button class="deny" data-seat-stop="mira" data-i="stop">Stop</button>
+        </div>
+        <div class="status-pill" style="right:8px;bottom:8px" id="st-mira">idle</div>
+      </div>
+      <div class="desk" data-seat="leyla" style="left:40px;top:364px;--scan:#c9a6ff">
+        <div class="top">OPS <span>LEYLA</span></div>
+        <i class="plant"></i><i class="lamp"></i><i class="papers"></i><i class="mug"></i><i class="kbd"></i>
+        <div class="screen" data-line="queue 03"></div>
+        <div class="desk-actions">
+          <input data-seat-input="leyla" data-i-ph="phMsg" placeholder="Message / Mesaj" />
+          <button class="allow" data-seat-send="leyla" data-i="send">Send</button>
+          <button class="deny" data-seat-stop="leyla" data-i="stop">Stop</button>
+        </div>
+        <div class="status-pill" style="right:8px;bottom:8px" id="st-leyla">idle</div>
+      </div>
+      <div class="desk" data-seat="deniz" style="right:40px;top:28px;--scan:#ffb25a">
+        <div class="top">COMMS <span>DENIZ</span></div>
+        <i class="plant"></i><i class="lamp"></i><i class="papers"></i><i class="mug"></i><i class="kbd"></i>
+        <div class="screen" data-line="draft.md"></div>
+        <div class="desk-actions">
+          <input data-seat-input="deniz" data-i-ph="phMsg" placeholder="Message / Mesaj" />
+          <button class="allow" data-seat-send="deniz" data-i="send">Send</button>
+          <button class="deny" data-seat-stop="deniz" data-i="stop">Stop</button>
+        </div>
+        <div class="status-pill" style="right:8px;bottom:8px" id="st-deniz">idle</div>
+      </div>
+      <div class="desk" data-seat="riza" style="right:40px;top:196px;--scan:#ff7a9a">
+        <div class="top">RISK <span>RIZA</span></div>
+        <i class="plant"></i><i class="lamp"></i><i class="papers"></i><i class="mug"></i><i class="kbd"></i>
+        <div class="screen" data-line="BLOCK?"></div>
+        <div class="desk-actions">
+          <input data-seat-input="riza" data-i-ph="phMsg" placeholder="Message / Mesaj" />
+          <button class="allow" data-seat-send="riza" data-i="send">Send</button>
+          <button class="deny" data-seat-stop="riza" data-i="stop">Stop</button>
+        </div>
+        <div class="status-pill" style="right:8px;bottom:8px" id="st-riza">idle</div>
+      </div>
+      <div class="desk" data-seat="spawn" style="right:40px;top:364px;--scan:#e6c36a">
+        <div class="top">FLEX <span>DESK</span></div>
+        <i class="plant"></i><i class="lamp"></i><i class="papers"></i><i class="mug"></i><i class="kbd"></i>
+        <div class="screen" data-line="empty"></div>
+        <div class="desk-actions">
+          <input data-seat-input="spawn" data-i-ph="phMsg" placeholder="Message / Mesaj" />
+          <button class="allow" data-seat-send="spawn" data-i="send">Send</button>
+          <button class="deny" data-seat-stop="spawn" data-i="stop">Stop</button>
+        </div>
+        <div class="status-pill" style="right:8px;bottom:8px" id="st-spawn">empty</div>
+      </div>
+      <div class="table" data-seat="ada">
+        <h3 data-i="war">MEETING · ADA</h3>
+        <div class="meeting"><i class="pad"></i><i class="laptop"></i><i class="pad b"></i><i class="glass"></i></div>
+        <div class="desk-actions" style="padding:8px">
+          <input data-seat-input="ada" data-i-ph="phMsg" placeholder="Message / Mesaj" />
+          <button class="allow" data-seat-send="ada" data-i="send">Send</button>
+          <button class="deny" data-seat-stop="ada" data-i="stop">Stop</button>
+        </div>
+      </div>
+      <div class="worker sit" id="w-kenan" style="left:132px;top:86px;--skin:#e7c7a6;--suit:#2f6a54">
+        <div class="bubble" id="b-kenan">kaynak tarıyorum</div>
+        <i class="cans"></i><div class="head"></div>
+        <div class="body"><i class="arm l"></i><i class="arm r"></i></div>
+        <div class="legs"><i class="leg"></i><i class="leg"></i></div><i class="shadow"></i>
+      </div>
+      <div class="worker sit" id="w-mira" style="left:132px;top:254px;--skin:#f3d2b5;--suit:#2a4f6a">
+        <div class="bubble" id="b-mira">PR hazır</div>
+        <i class="cans"></i><div class="head"></div>
+        <div class="body"><i class="arm l"></i><i class="arm r"></i></div>
+        <div class="legs"><i class="leg"></i><i class="leg"></i></div><i class="shadow"></i>
+      </div>
+      <div class="worker sit" id="w-leyla" style="left:132px;top:422px;--skin:#d7b89a;--suit:#4a3b6a">
+        <div class="bubble" id="b-leyla">ticket kapatıyorum</div>
+        <i class="cans"></i><div class="head"></div>
+        <div class="body"><i class="arm l"></i><i class="arm r"></i></div>
+        <div class="legs"><i class="leg"></i><i class="leg"></i></div><i class="shadow"></i>
+      </div>
+      <div class="worker sit" id="w-deniz" style="left:calc(100% - 132px);top:86px;--skin:#efd0b0;--suit:#6a4f2a">
+        <div class="bubble" id="b-deniz">onay kartı</div>
+        <i class="cans"></i><div class="head"></div>
+        <div class="body"><i class="arm l"></i><i class="arm r"></i></div>
+        <div class="legs"><i class="leg"></i><i class="leg"></i></div><i class="shadow"></i>
+      </div>
+      <div class="worker sit" id="w-riza" style="left:calc(100% - 132px);top:254px;--skin:#e2c2a4;--suit:#6a2a3a">
+        <div class="bubble" id="b-riza">BLOCK?</div>
+        <i class="cans"></i><div class="head"></div>
+        <div class="body"><i class="arm l"></i><i class="arm r"></i></div>
+        <div class="legs"><i class="leg"></i><i class="leg"></i></div><i class="shadow"></i>
+      </div>
+      <div class="worker walk" id="w-ada" style="left:50%;top:62%;--skin:#f0d4b6;--suit:#c9a24a">
+        <div class="bubble" id="b-ada">Ada yönlendiriyor</div>
+        <i class="cans"></i><div class="head"></div>
+        <div class="body"><i class="arm l"></i><i class="arm r"></i></div>
+        <div class="legs"><i class="leg"></i><i class="leg"></i></div><i class="shadow"></i>
+      </div>
+    </div>
+  </div>
+  <aside>
+    <h2 data-i="roster">Roster / Kadro</h2>
+    <div id="roster"></div>
+    <div>
+      <h2 data-i="feed">Activity / İş akışı</h2>
+      <div class="feed" id="feed"></div>
+    </div>
+    <div class="stats" id="stats">Ticket açık: <b>3</b><br>Risk veto: <b>1</b><br>Onay bekleyen: <b>0</b></div>
+  </aside>
+</main>
+<footer>
+  <div>
+    <div class="ticker"><b data-i="approvals">APPROVALS / ONAY</b> <span data-i="approvalHint">Cards come from the harness. Allow once · Always writes a grant.</span></div>
+    <div class="cards" id="cards"></div>
+  </div>
+  <div class="alpha" id="banner">Mesaj ve onay köprü üzerinden OpenMaus’a gider. 127.0.0.1 only.</div>
+  <div class="stats" id="liveStats">Hedef seç, yaz, gönder.</div>
+</footer>
+<div class="dock">
+  <select id="target"></select>
+  <input id="composer" data-i-ph="phDock" placeholder="Message selected agent / Seçili ajana mesaj" />
+  <button id="sendBtn" data-i="send">Send</button>
+  <button id="stopBtn" data-i="stop">Stop</button>
+</div>
+<script src="office.js"></script>
 </body>
 </html>
